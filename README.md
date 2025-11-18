@@ -1,62 +1,254 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<div align='center'>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+# Device Sandbox Simulator
+</div>
 
-## About Laravel
+A full-stack interactive device simulation app built with **React**, **Laravel**, and **MySQL**, allowing users to drag & drop virtual devices, interact with their settings, and save reusable configuration presets.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 **Overview**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Device Sandbox Simulator is a web-based testing environment where users can experiment with virtual **Light** and **Fan** devices.
+Each device supports real-time interaction through an intuitive control panel.
+Users can drag-and-drop devices onto a working canvas, adjust their settings visually, and save/load presets through a backend API.
 
-## Learning Laravel
+This project demonstrates:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* Modern drag–drop interaction
+* Real-time device state simulation
+* Responsive visual rendering
+* Full CRUD backend communication
+* Clean UI/UX inspired by smart home apps
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 🚀 Live Demo
+#### **Client Part :** 
+  * **Live Demo :** [https://device-sandbox-simulator-client.vercel.app](https://device-sandbox-simulator-client.vercel.app)
+  * **Repository :** [git@github.com:Irfan-Chowdhury/device-sandbox-simulator-client.git](git@github.com:Irfan-Chowdhury/device-sandbox-simulator-client.git)
 
-## Laravel Sponsors
+#### **Server Part :** 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+  * **Live Link :** [https://bookingservice.irfandev.xyz](https://bookingservice.irfandev.xyz)
+  * **Repository :** [https://github.com/Irfan-Chowdhury/device-sandbox-simulator-server](https://github.com/Irfan-Chowdhury/device-sandbox-simulator-server)
 
-### Premium Partners
+---
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
 
-## Contributing
+## 🧩 **Features**
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 🔹 **Drag & Drop Interface**
 
-## Code of Conduct
+* Devices (Light, Fan) are draggable from the sidebar.
+* Users can drop devices onto the Canvas to activate them.
+* When dropped:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+  * The device appears in the center of the Canvas.
+  * Its control panel automatically opens.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 🔹 **Light Device**
 
-## License
+* Toggle Power (ON/OFF)
+* Select Color Temperature
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# device-sandbox-simulator
+  * Warm
+  * Neutral
+  * Cool
+  * Pink
+* Adjustable Brightness (0%–100%)
+* Real-time glowing effect matching brightness & color
+* Smooth animations & fading layers
+
+---
+
+### 🔹 **Fan Device**
+
+* Toggle Power
+* Adjustable Speed (0–100%)
+* Smooth spinning animation rendered with rotation frames
+* Dynamic progress bar visual
+
+---
+
+### 🔹 **Preset Management**
+
+Users can save custom device configurations:
+
+* Light states (power, brightness, color)
+* Fan states (power, speed)
+
+Presets appear in the sidebar:
+
+* Draggable (same as devices)
+* On drop:
+
+  * All device configurations are restored instantly
+  * Corresponding control panels become active
+* Delete presets directly from sidebar
+* Save Preset modal UI for naming presets
+
+---
+
+## 🛠 **Tech Stack**
+
+### **Frontend**
+
+* React (Functional Components + Hooks)
+* React DnD (drag & drop)
+* Context API (global state management)
+* Custom UI components (LightVisual, FanControls, etc.)
+
+### **Backend**
+
+* Laravel (API mode)
+* MySQL (JSON fields)
+* RESTful Controller Architecture
+* CORS enabled for React integration
+
+---
+
+## 📁 **Project Structure**
+
+### **Frontend**
+
+```
+src/
+ ├── api/
+ │    └── api.js
+ ├── components/
+ │    ├── Canvas/
+ │    ├── Sidebar/
+ │    ├── Presets/
+ │    ├── Light/
+ │    └── Fan/
+ ├── context/
+ │    └── DeviceContext.js
+ ├── ItemTypes.js
+ └── App.js
+```
+
+### **Backend**
+
+```
+app/
+ ├── Models/
+ │    └── Preset.php
+ └── Http/
+      └── Controllers/
+           └── Api/
+               └── PresetController.php
+
+database/
+ └── migrations/
+      └── create_presets_table.php
+```
+
+---
+
+
+## 🔧 **Installation & Setup**
+
+### **Backend Setup**
+
+```sh
+git clone git@github.com:Irfan-Chowdhury/device-sandbox-simulator-server.git
+cd device-sandbox-simulator-server
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
+
+### **Frontend Setup**
+
+```sh
+git clone git@github.com:Irfan-Chowdhury/device-sandbox-simulator-client.git
+cd device-sandbox-simulator-client
+npm install
+npm start
+```
+
+Set API base URL in `src/api/api.js`:
+
+```js
+export const api = axios.create({
+  baseURL: "http://localhost:8000/api", //or, baseURL: https://bookingservice.irfandev.xyz/api
+});
+
+```
+
+---
+
+
+### 🔹 **Backend Integration**
+
+Save, load, and delete presets via Laravel-powered API:
+
+* `/api/presets` (GET) — Fetch all presets
+* `/api/presets/{id}` (GET) — Load preset
+* `/api/presets` (POST) — Create preset
+* `/api/presets/{id}` (DELETE) — Delete preset
+
+Data saved in MySQL using this JSON structure:
+
+```json
+{
+  "light": {
+    "power": true,
+    "brightness": 75,
+    "color": "warm"
+  },
+  "fan": {
+    "power": false,
+    "speed": 0
+  }
+}
+```
+
+---
+
+## 🎯 **How It Works**
+
+### 1️⃣ Drag Device → Drop on Canvas
+
+Canvas identifies the type and activates the corresponding device panel.
+
+### 2️⃣ Adjust Settings
+
+UI updates the visual simulation in real time.
+
+### 3️⃣ Save Preset
+
+User enters a name → the preset is sent to backend → added to sidebar list.
+
+### 4️⃣ Drag Preset → Drop on Canvas
+
+Preset instantly restores device configuration.
+
+---
+
+
+
+## 📝 **Conclusion**
+
+Device Sandbox Simulator is a complete demonstration of:
+
+✔ Smart Home device UX <br>
+✔ Real-time visual simulation <br>
+✔ Modern drag-drop UI patterns <br>
+✔ Full-stack CRUD API integration <br>
+✔ React + Laravel interoperability 
+
+This can be extended into a professional IoT dashboard, smart home controller, or interactive device prototyping tool.
+
+---
+
+<!-- # packages
+npm install react-dnd react-dnd-html5-backend
+npm install axios -->
+
+
